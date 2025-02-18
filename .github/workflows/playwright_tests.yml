@@ -9,17 +9,14 @@ on:
       - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: windows-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.10
+          python-version: '3.11'  # Use a valid version
 
       - name: Install dependencies
         run: pip install -r requirements.txt
