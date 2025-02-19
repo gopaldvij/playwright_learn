@@ -14,7 +14,7 @@ def test_fill_text_box(setup):
     permanent_address = "44/1 Bharat Apartment, 4C 5th Main Road, Jayanagar, Bangalore 560041, KA, IND"
 
     text_box.fill_form(full_name, email, current_address, permanent_address)
-    page.wait_for_timeout(3000)
+    page.wait_for_timeout(4000)
 
     results = text_box.get_result()
 
