@@ -19,7 +19,7 @@ def test_fill_text_box(setup):
     results = text_box.get_result()
 
     assert results["name"] == "full_name", f"Expected '{full_name}',but got '{results['name']}'"
-    assert results["email"] == email, f"Expected '{email}',but got '{results['email']}'"
+    assert results["email"] == "email", f"Expected '{email}',but got '{results['email']}'"
     assert results["current_address"] == current_address, f"Expected '{current_address}', but got '{results['current_address']}'"
     assert results["permanent_address"] == permanent_address, f'Expected "{permanent_address}", but got "{results["permanent_address"]}"'
 
