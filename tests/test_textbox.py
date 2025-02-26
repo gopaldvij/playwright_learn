@@ -5,11 +5,11 @@ from utils.loggers import log_info
 
 log_info("Test started")
 
-
 def test_fill_text_box(setup):
     page = setup
     text_box = TextBoxPage(page)
     text_box.open_url("https://demoqa.com/text-box")
+    page.screenshot(path="screenshot.png", full_page=True)
 
     full_name = "Gopal Sakhiya"
     email = "gopal@yopmail.com"

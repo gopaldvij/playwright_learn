@@ -1,6 +1,8 @@
 name: Playwright Tests (PyCharm)
 
 on:
+  schedule:
+    - cron: '30 18 * * *'  # Runs at 6:30 PM UTC
   push:
     branches:
       - main
@@ -29,9 +31,19 @@ jobs:
             pip install playwright
             playwright install
 
+      - name: Run Tests with Video & Screenshot Comparison
+        run: pytest --headless --update-snapshots
+
+      - name: Upload Videos & Screenshots as Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            videos/
+            screenshots/
+
       - name: Run Playwright tests
         run: pytest tests/
 
       - name: Install Playwright Browsers
         run: playwright install --with-deps
-
