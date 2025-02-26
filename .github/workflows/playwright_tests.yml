@@ -35,7 +35,7 @@ jobs:
         run: pytest --headless --update-snapshots
 
       - name: Upload Videos & Screenshots as Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # ✅ Updated version
         with:
           name: test-results
           path: |
