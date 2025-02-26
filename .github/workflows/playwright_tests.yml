@@ -32,7 +32,7 @@ jobs:
             playwright install
 
       - name: Run Tests with Video & Screenshot Comparison
-        run: pytest --headless --update-snapshots
+        run: pytest --capture=no
 
       - name: Upload Videos & Screenshots as Artifacts
         uses: actions/upload-artifact@v4  # ✅ Updated version
